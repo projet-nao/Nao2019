@@ -57,6 +57,17 @@ SailsJS permet de communiquer via une base de données qu'il faudra connecter. L
 SailsJS fait beaucoup, et propose une template très élaborée avec "type 1" (lors de la création de projet).
 Cependant, c'est un style assez basique, pour le personnaliser, il est fortement conseillé d'utiliser un Framework d'Interface Utilisateur (UI) comme [Bootstrap](https://getbootstrap.com/) ou encore [Semantic UI](https://semantic-ui.com/) ou [JQueryUI](https://jqueryui.com/) entre (de nombreux) autres... 
 
+## Fonctionnement global de SailsJS
+Ce paragraphe n'a pas vocation à expliquer précisément le fonctionnement de chaque feature du framework mais plutôt un "tour du propriétaire" pour les novices.
+
+L'aspect View (du MVC de quelques paragraphes avant) est stocké dans le dossier "views" (sans grandes surprises) et contient deux sous dossiers :  
+`layout` qui contient `layout.ejs` -> Ce fichier contient le layout du site : C'est la tête et le pied de chaque page. Seul le corps des pages changera ce qui évite de recopier sur toutes les pages une barre de navigation par exemple...  
+`pages` qui contient des fichiers `.ejs` qui seront les corps des différentes pages.
+Les fichiers `.ejs` sont des fichiers `HTML` dans lesquels on peut afficher des variables. Nous verrons plus tard comment afficher ces variables.
+
+Le dossier `api` contient des dossiers dont ceux qui vont nous intéresser : `models` et `controllers`.  
+Les API se génèrent en première partie via une commande de SailsJS : `sails generate api \*Nom de la table de la BDD\*`
+
 <!-- Internally, Sails used [`sails-generate@1.16.8`](https://github.com/balderdashy/sails-generate/tree/v1.16.8/lib/core-generators/new). -->
 
 
