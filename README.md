@@ -26,9 +26,9 @@ This app was originally generated on Fri May 03 2019 00:39:50 GMT+0200 (GMT+02:0
  + (Conseillé mais pas obligatoire) PHPMyAdmin
 
 ### Versions
- Sails : v1.1.0
- Node.js : v10.15.3 (Dernière version stable actuellement)
- npm : v6.4.1
+ + Sails : v1.1.0
+ + Node.js : v10.15.3 (Dernière version stable actuellement)
+ + npm : v6.4.1
 
 Le serveur qui hébèrge le tout est un Ubuntu 16.04.6 (Des problèmes rencontrés avec Ubuntu 18 notamment avec nouveau le système de mise en place d'adresse IP statique...)
 
@@ -38,19 +38,19 @@ Le serveur qui hébèrge le tout est un Ubuntu 16.04.6 (Des problèmes rencontr�
   SailsJS : `npm install sails -g`
 
 ### Description BREVE de SailsJS : 
-  SailsJS est un Framework orienté MVC : Model , View , Controller.
-  Rapidement, ce type de Framework sépare l'aspect données (Model) de l'apparence (View) et du traitement (Controller).
-  Ce format découpé nécessite de bien définir les interfaces entres les modules (qui envoie quoi à qui)pour un développement efficace.
-  Avec un bon découpage, il est possible de rendre chaque partie interchangable et donc de pouvoir faire évoluer le projet en mettant le moins possible en péril le reste du projet.
+SailsJS est un Framework orienté MVC : Model , View , Controller.
+Rapidement, ce type de Framework sépare l'aspect données (Model) de l'apparence (View) et du traitement (Controller).
+Ce format découpé nécessite de bien définir les interfaces entres les modules (qui envoie quoi à qui)pour un développement efficace.
+Avec un bon découpage, il est possible de rendre chaque partie interchangable et donc de pouvoir faire évoluer le projet en mettant le moins possible en péril le reste du projet.
 
-  Ce que SailsJS fait (entre autre, je ne connais pas toutes les options du Framework) :
-    + Accède à une(des) base(s) de données
-    + Renvoie des vues à l'utilisateur
+### Ce que SailsJS fait (entre autre, je ne connais pas toutes les options du Framework) :
+  + Accède à une(des) base(s) de données
+  + Renvoie des vues à l'utilisateur
   
-  Ce que SailsJS ne fait pas :
-    + Hébérger une base de données
+### Ce que SailsJS ne fait pas :
+  + Hébérger une base de données
         SailsJS permet de communiquer via une base de données qu'il faudra connecter. Les instructions pour connecter une base de données MySQL seront données plus bas. Pour les autres bases de données, il faudra se référrer à la documentation propre à SailsJS (cf. Liens de la première partie).
-    + Proposer une template graphique pour la présentation de votre site web
+  + Proposer une template graphique pour la présentation de votre site web
         SailsJS fait beaucoup, et propose une template très élaborée avec "type 1" (lors de la création de projet).
         Cependant, c'est un style assez basique, pour le personnaliser, il est fortement conseillé d'utiliser un Framework d'Interface Utilisateur (UI) comme [Bootstrap](https://getbootstrap.com/) ou encore [Semantic UI](https://semantic-ui.com/) ou [JQueryUI](https://jqueryui.com/) entre (de nombreux) autres... 
 
