@@ -38,8 +38,7 @@ Le serveur qui hébèrge le tout est un Ubuntu 16.04.6 (Des problèmes rencontr�
   SailsJS : `npm install sails -g`
 
 ### Description BREVE de SailsJS : 
-SailsJS est un Framework orienté MVC : Model , View , Controller.
-
+SailsJS est un Framework orienté MVC : Model , View , Controller.  
 Rapidement, ce type de Framework sépare l'aspect données (Model) de l'apparence (View) et du traitement (Controller).
 Ce format découpé nécessite de bien définir les interfaces entres les modules (qui envoie quoi à qui)pour un développement efficace.
 Avec un bon découpage, il est possible de rendre chaque partie interchangable et donc de pouvoir faire évoluer le projet en mettant le moins possible en péril le reste du projet.
@@ -49,11 +48,9 @@ Avec un bon découpage, il est possible de rendre chaque partie interchangable e
   + Renvoie des vues à l'utilisateur
   
 ### Ce que SailsJS ne fait pas :
-  + Hébérger une base de données :
-
+  + Hébérger une base de données :  
 SailsJS permet de communiquer via une base de données qu'il faudra connecter. Les instructions pour connecter une base de données MySQL seront données plus bas. Pour les autres bases de données, il faudra se référrer à la documentation propre à SailsJS (cf. Liens de la première partie).
-  + Proposer une template graphique pour la présentation de votre site web
-
+  + Proposer une template graphique pour la présentation de votre site web :  
 SailsJS fait beaucoup, et propose une template très élaborée avec "type 1" (lors de la création de projet).
 Cependant, c'est un style assez basique, pour le personnaliser, il est fortement conseillé d'utiliser un Framework d'Interface Utilisateur (UI) comme [Bootstrap](https://getbootstrap.com/) ou encore [Semantic UI](https://semantic-ui.com/) ou [JQueryUI](https://jqueryui.com/) entre (de nombreux) autres... 
 
@@ -62,11 +59,11 @@ Ce paragraphe n'a pas vocation à expliquer précisément le fonctionnement de c
 
 L'aspect View (du MVC de quelques paragraphes avant) est stocké dans le dossier "views" (sans grandes surprises) et contient deux sous dossiers :  
 `layout` qui contient `layout.ejs` -> Ce fichier contient le layout du site : C'est la tête et le pied de chaque page. Seul le corps des pages changera ce qui évite de recopier sur toutes les pages une barre de navigation par exemple...  
-`pages` qui contient des fichiers `.ejs` qui seront les corps des différentes pages.
+`pages` qui contient des fichiers `.ejs` qui seront les corps des différentes pages.  
 Les fichiers `.ejs` sont des fichiers `HTML` dans lesquels on peut afficher des variables. Nous verrons plus tard comment afficher ces variables.
 
 Le dossier `api` contient des dossiers dont ceux qui vont nous intéresser : `models` et `controllers`.  
-Les API se génèrent en première partie via une commande de SailsJS : `sails generate api \*Nom de la table de la BDD\*`
+Les API se génèrent en première partie via une commande de SailsJS : `sails generate api *Nom de la table de la BDD*`
 
 <!-- Internally, Sails used [`sails-generate@1.16.8`](https://github.com/balderdashy/sails-generate/tree/v1.16.8/lib/core-generators/new). -->
 
