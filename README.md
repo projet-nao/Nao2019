@@ -21,7 +21,7 @@ This app was originally generated on Fri May 03 2019 00:39:50 GMT+0200 (GMT+02:0
 ## Prérequis :
  + [Node.js](https://nodejs.org/fr/)
  + [npm](https://www.npmjs.com/)
- + Sails.js ( Le framework qui a généré la première partie de ce README)
+ + Sails.js ( Le framework qui a généré la première partie de ce README )
  + MySQL
  + (Conseillé mais pas obligatoire) PHPMyAdmin
 
@@ -60,10 +60,23 @@ Ce paragraphe n'a pas vocation à expliquer précisément le fonctionnement de c
 L'aspect View (du MVC de quelques paragraphes avant) est stocké dans le dossier "views" (sans grandes surprises) et contient deux sous dossiers :  
 `layout` qui contient `layout.ejs` -> Ce fichier contient le layout du site : C'est la tête et le pied de chaque page. Seul le corps des pages changera ce qui évite de recopier sur toutes les pages une barre de navigation par exemple...  
 `pages` qui contient des fichiers `.ejs` qui seront les corps des différentes pages.  
-Les fichiers `.ejs` sont des fichiers `HTML` dans lesquels on peut afficher des variables. Nous verrons plus tard comment afficher ces variables.
+Les fichiers `.ejs` sont des fichiers `HTML` dans lesquels on peut afficher des variables via le controlleur. Nous verrons plus tard comment afficher ces variables.  
 
 Le dossier `api` contient des dossiers dont ceux qui vont nous intéresser : `models` et `controllers`.  
-Les API se génèrent en première partie via une commande de SailsJS : `sails generate api *Nom de la table de la BDD*`
+Les API se génèrent en première partie via une commande de SailsJS : `sails generate api *Nom de la table de la BDD*`  
+Cette commande génère deux fichiers `./models/*Nom de la table de la BDD*.js` et `./controllers/*Nom de la table de la BDD*.js`
+
+L'aspect Model est contenu dans le dossier `api/models`.  
+Ce dossier contient des fichiers `.json` qui décrivent la structure des tables de la base de données.
+##### /!\ Le framework SailsJS impose d'avoir un champ `createdAt` et `updatedAt` /!\   
+Les fichiers de Model ne font pas d'actions / de requêtes, c'est le rôle du Controller.  
+
+L'aspect Controller est contenu dans le dossier `api/controllers`.  
+Ce dossier contient des fichiers `.js` qui permettent d'écrire des fonctions de traitement et/ou récupération des données.  
+Il est possible, par exemple, de voir la méthode HTTP du client, son IP et d'autres paramètres, de choisir ce qu'il sera affiché pour la suite.  
+
+En général, le fonctionnement est que le client demande un controller, qui récupère des données au besoin,
+
 
 <!-- Internally, Sails used [`sails-generate@1.16.8`](https://github.com/balderdashy/sails-generate/tree/v1.16.8/lib/core-generators/new). -->
 
