@@ -67,7 +67,9 @@ Les API se génèrent en première partie via une commande de SailsJS : `sails g
 Cette commande génère deux fichiers `./models/*Nom de la table de la BDD*.js` et `./controllers/*Nom de la table de la BDD*.js`
 
 L'aspect Model est contenu dans le dossier `api/models`.  
-Ce dossier contient des fichiers `.json` qui décrivent la structure des tables de la base de données.
+Ce dossier contient des fichiers `.json` qui décrivent la structure des tables de la base de données.  
+Il faut installer un adapteur pour les différentes bases de données.  Pour installer l'adapteur pour MySQL il faut saisir la commande `npm install sails-mysql --save --save-exact` dans le dossier du projet.  
+En suite le paramétrage pour le fichier `/config/datastores.js` est disponible à [cette page](https://sailsjs.com/documentation/reference/configuration/sails-config-datastores#?using-a-local-mysql-database-in-development)  
 ##### /!\ Le framework SailsJS impose d'avoir un champ `createdAt` et `updatedAt` /!\   
 Les fichiers de Model ne font pas d'actions / de requêtes, c'est le rôle du Controller.  
 
@@ -75,8 +77,17 @@ L'aspect Controller est contenu dans le dossier `api/controllers`.
 Ce dossier contient des fichiers `.js` qui permettent d'écrire des fonctions de traitement et/ou récupération des données.  
 Il est possible, par exemple, de voir la méthode HTTP du client, son IP et d'autres paramètres, de choisir ce qu'il sera affiché pour la suite.  
 
-En général, le fonctionnement est que le client demande un controller, qui récupère des données au besoin,
+En général, le fonctionnement est que le client demande un controller, qui récupère des données au besoin. Ensuite le controller réponds une vue qu'il remplit avec les données traitées.
 
+Il est possible d'intégrer dans les vues ( les fichiers `.ejs` ) des tags pour écrire depuis le controller ( à la manière que PHP écrirait dans un fichier .html ).  
+Ces tags sont décris dans la [documentation de SailsJS](https://sailsjs.com/documentation/concepts/views/locals).  
+`<%= someValue %>` permet d'afficher du texte uniquement, par exemple le nom de la personne connectée.  
+`<%- someRawHTML %>` permet d'afficher du HTML, pour afficher un élément pour le DOM (un onglet d'une navbar par exemple)
+`<% if (condition) %>` permet d'éxécuter du JavaScript.  
+Par exemple `<% if (connected) { %> <a>Logout</a> <% } %>` affiche `<a>Logout</a>` si le client est connecté...   
+Seule la première balise change le type d'affichage, la fermeture est toujours `%>`.
+
+Le controlleur peut contacter les fichiers de Model pour faire des requêtes à la base de données.
 
 <!-- Internally, Sails used [`sails-generate@1.16.8`](https://github.com/balderdashy/sails-generate/tree/v1.16.8/lib/core-generators/new). -->
 
