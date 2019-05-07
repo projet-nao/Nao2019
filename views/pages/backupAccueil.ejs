@@ -1,0 +1,790 @@
+<div>
+</div>
+<div class="notifications">
+    <div class="ui icon negative message">
+        <i aria-hidden="true" class="close icon"></i>
+        <i aria-hidden="true" class="minus circle icon"></i>
+        <div>Le robot n'est pas connecté !
+        </div>
+    </div>
+</div>
+<div class="padding-top">
+    <div class="ui fluid container">
+        <div class="ui top attached tabular menu">
+            <a class="item tablinks" onclick="openTabs(event, 'controlePasAPas')">Controle pas à pas</a>
+            <a class="active item tablinks" id="actionTab" onclick="openTabs(event, 'actions')">Actions</a>
+            <a class="item tablinks" onclick="openTabs(event, 'infos')">Infos</a>
+        </div>
+        <div class="ui bottom attached segment" id="content">
+
+            <div id="controlPasAPas" class="tabContent">
+                <div class="ui fluid center aligned container"><h3 class="ui header">Ces
+                    actions ne fonctionnent que si le robot n'est pas en mode pause</h3><br>
+                </div>
+                <div class="ui fluid container">
+                    <div class="ui divided center aligned equal width grid">
+                        <div class="column">
+                            <div class="ui header">Déplacement Corps</div>
+                            <div class="ui stretched center aligned three column grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow left big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="arrow up icon"></i>
+                                            <!-- react-text: 76 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow up big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="arrow left icon"></i>
+                                            <!-- react-text: 84 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                    <div class="column"><i aria-hidden="true"
+                                                           class="reddit alien huge fitted icon"
+                                                           style="color: rgb(243, 156, 18);"></i>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="arrow right icon"></i>
+                                            <!-- react-text: 90 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow down big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="arrow down icon"></i>
+                                            <!-- react-text: 98 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow right big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui header">Déplacement Tête</div>
+                            <div class="ui stretched center aligned three column grid">
+                                <div class="row">
+                                    <div class="column"></div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="chevron up icon"></i>
+                                            <!-- react-text: 110 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                    <div class="column"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="chevron left icon"></i>
+                                            <!-- react-text: 116 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                    <div class="column"><i aria-hidden="true"
+                                                           class="reddit alien huge fitted icon"
+                                                           style="color: rgb(243, 156, 18);"></i>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="chevron right icon"></i>
+                                            <!-- react-text: 122 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column"></div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i
+                                                aria-hidden="true"
+                                                class="chevron down icon"></i>
+                                            <!-- react-text: 128 --> <!-- /react-text -->
+                                        </button>
+                                    </div>
+                                    <div class="column"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui container" style="margin: 2em;">
+                        <div class="ui center aligned header">Autres fonction</div>
+                        <h3 class="ui left aligned header"><!-- react-text: 133 -->Mode
+                            rasta<!-- /react-text --></h3>
+                        <div class="ui fluid action labeled input">
+                            <div class="ui label label"><!-- react-text: 136 -->Pendant
+                                <!-- /react-text --></div>
+                            <input type="text" placeholder="X secondes">
+                            <button class="ui button button">Executer</button>
+                        </div>
+                        <h3 class="ui left aligned header"><!-- react-text: 140 -->Mode
+                            parlotte<!-- /react-text --></h3>
+                        <div class="ui fluid action labeled input">
+                            <div class="ui label label"><!-- react-text: 143 -->Faire dire
+                                <!-- /react-text --></div>
+                            <input type="text" placeholder="Coucou">
+                            <button class="ui button button">Executer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="actions" class="tabContent" class="ui fluid container">
+                <button class="ui massive button" style="margin: 5px;">Tai Tchi</button>
+                <button class="ui massive button" style="margin: 5px;">Air Guitar</button>
+                <button class="ui massive button" style="margin: 5px;">Chercher la balle</button>
+                <button class="ui massive button" style="margin: 5px;">Mode pause</button>
+                <button class="ui massive button" style="margin: 5px;">Réveil</button>
+            </div>
+
+
+                <div id="infos" class="tabContent" data-reactroot="">
+                    <div>
+                        <div class="ui borderless inverted top fixed menu">
+                            <div class="item"><img src="./assets/3ac540b62425660ea98b8d15482cde62.png"
+                                                   title="Knock Knock !" class="header_logo"></div>
+                            <div class="item"><h1 class="header_title">NAOBOX V2</h1></div>
+                            <div class="item">
+                                <div class="batteryPourcent"><!-- react-text: 10 -->0<!-- /react-text -->
+                                    <!-- react-text: 11 -->%<!-- /react-text --></div>
+                                <i class="icons" style="font-size: 2.5em;"><i aria-hidden="true"
+                                                                              class="battery empty icon"></i><i
+                                        aria-hidden="true" class="red dont icon"></i></i></div>
+                            <div class="item">
+                                <button class="ui right labeled icon button disabled" tabindex="-1"><i
+                                        aria-hidden="true" class="window close icon"></i><!-- react-text: 18 -->
+                                    <!-- /react-text --><!-- react-text: 19 -->Arrêter l'action
+                                    <!-- /react-text --></button>
+                            </div>
+                            <div class="right menu">
+                                <div class="item"><a title="Zone administrateur" class="ui icon inverted button"
+                                                     href="#/admin"><i aria-hidden="true"
+                                                                       class="wrench icon"></i>
+                                    <!-- react-text: 24 --> <!-- /react-text --></a></div>
+                                <a href="../assets/Manuel_utilisation.pdf" class="doc" target="_blank"
+                                   title="Manuel d'utilisation">
+                                    <div class="item">
+                                        <button class="ui icon inverted button"><i aria-hidden="true"
+                                                                                   class="book icon"></i>
+                                            <!-- react-text: 29 --> <!-- /react-text --></button>
+                                    </div>
+                                </a>
+                                <div class="item">
+                                    <button title="Cliquez pour éteindre le robot"
+                                            class="ui red icon inverted button"><i aria-hidden="true"
+                                                                                   class="power icon"></i>
+                                        <!-- react-text: 33 --> <!-- /react-text --></button>
+                                    <!-- react-empty: 34 --></div>
+                            </div>
+                        </div>
+                    </div><!-- react-empty: 35 -->
+                    <div class="notifications">
+                        <div class="ui icon negative message"><i aria-hidden="true" class="close icon"></i><i
+                                aria-hidden="true" class="minus circle icon"></i>
+                            <div>Le robot n'est pas connecté !</div>
+                        </div>
+                    </div>
+                    <div class="padding-top"><!-- react-empty: 38 -->
+                        <div class="ui fluid container">
+                            <div class="ui top attached tabular menu"><a class="item"><!-- react-text: 42 -->
+                                Controle pas à pas<!-- /react-text --></a><a class="item">
+                                <!-- react-text: 44 -->Actions<!-- /react-text --></a><a class="active item">
+                                <!-- react-text: 46 -->Infos<!-- /react-text --></a></div>
+                            <div class="ui bottom attached segment">
+                                <div class="ui fluid center aligned container"><h3 class="ui header">
+                                    <!-- react-text: 350 -->Informations concernant le robot<!-- /react-text -->
+                                    <!-- react-text: 351 -->paulo<!-- /react-text --></h3><br>
+                                    <div class="ReactTable">
+                                        <div class="rt-table">
+                                            <div class="rt-thead -header" style="min-width: 320px;">
+                                                <div class="rt-tr">
+                                                    <div class=" rt-resizable-header -sort-asc -cursor-pointer rt-th"
+                                                         style="flex: 80 0 auto; width: 80px;">
+                                                        <div class="rt-resizable-header-content">NOM LOGIQUE DU
+                                                            CAPTEUR
+                                                        </div>
+                                                        <div class="rt-resizer"></div>
+                                                    </div>
+                                                    <div class=" rt-resizable-header -cursor-pointer rt-th"
+                                                         style="flex: 80 0 auto; width: 80px;">
+                                                        <div class="rt-resizable-header-content">LIBELLE DU
+                                                            CAPTEUR
+                                                        </div>
+                                                        <div class="rt-resizer"></div>
+                                                    </div>
+                                                    <div class=" rt-resizable-header -cursor-pointer rt-th"
+                                                         style="flex: 80 0 auto; width: 80px;">
+                                                        <div class="rt-resizable-header-content">VALEUR</div>
+                                                        <div class="rt-resizer"></div>
+                                                    </div>
+                                                    <div class=" rt-resizable-header -cursor-pointer rt-th"
+                                                         style="flex: 80 0 auto; width: 80px;">
+                                                        <div class="rt-resizable-header-content">SEUIL
+                                                            D'ALERTE
+                                                        </div>
+                                                        <div class="rt-resizer"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rt-tbody" style="min-width: 320px;">
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -odd">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">battery
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Niveau de la
+                                                            batterie
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0%
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">20%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -even">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            lElbowTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            du coude gauche
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -odd">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">lFootWeight
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Poids du pied
+                                                            gauche
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0 kg
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">5kg
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -even">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            lHipTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            de la hanche gauche
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -odd">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            lKneeTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            du genou gauche
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -even">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            lSoulderTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            de l'épaule gauche
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -odd">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            rElbowTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            du coude droit
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -even">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">rFootWeight
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Poids du pied
+                                                            droit
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0 kg
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">5kg
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -odd">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            rHipTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            de la hanche droite
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -even">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            rKneeTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            du genou droit
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -odd">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">
+                                                            rShoulderTemperature
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            de l'épaule droite
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">60°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -even">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">tempCPU
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">Température
+                                                            CPU
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">0°C
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">90°C
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rt-tr-group">
+                                                    <div class="rt-tr -padRow">
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                        <div class="rt-td"
+                                                             style="flex: 80 0 auto; width: 80px;">&nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="-pagination">
+                                            <div class="-previous">
+                                                <button type="button" disabled="" class="-btn">Précédent
+                                                </button>
+                                            </div>
+                                            <div class="-center"><span class="-pageInfo"><!-- react-text: 495 -->Page
+                                                <!-- /react-text --><!-- react-text: 496 --><!-- /react-text --><div
+                                                        class="-pageJump" data-children-count="1"><input
+                                                        type="number" value="1"></div><!-- react-text: 499 -->
+                                                <!-- /react-text --><!-- react-text: 500 -->sur
+                                                <!-- /react-text --><!-- react-text: 501 --><!-- /react-text --><span
+                                                        class="-totalPages">1</span></span><span
+                                                    class="select-wrap -pageSizeOptions"
+                                                    data-children-count="1"><select><option
+                                                    value="5">5 lignes</option><option
+                                                    value="10">10 lignes</option><option
+                                                    value="20">20 lignes</option><option
+                                                    value="25">25 lignes</option><option
+                                                    value="50">50 lignes</option><option
+                                                    value="100">100 lignes</option></select></span></div>
+                                            <div class="-next">
+                                                <button type="button" disabled="" class="-btn">Suivant</button>
+                                            </div>
+                                        </div>
+                                        <div class="-loading">
+                                            <div class="-loading-inner">Chargement...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </div>
+        <div class="ui bottom attached segment">
+            <div>
+                <div class="ui fluid center aligned container"><h3 class="ui header">Ces actions ne fonctionnent
+                    que si le robot n'est pas en mode pause</h3><br></div>
+                <div class="ui fluid container">
+                    <div class="ui divided center aligned equal width grid">
+                        <div class="column">
+                            <div class="ui header">Déplacement Corps</div>
+                            <div class="ui stretched center aligned three column grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow left big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="arrow up icon"></i>
+                                            <!-- react-text: 900 --> <!-- /react-text --></button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow up big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="arrow left icon"></i>
+                                            <!-- react-text: 908 --> <!-- /react-text --></button>
+                                    </div>
+                                    <div class="column"><i aria-hidden="true"
+                                                           class="reddit alien huge fitted icon"
+                                                           style="color: rgb(243, 156, 18);"></i></div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="arrow right icon"></i>
+                                            <!-- react-text: 914 --> <!-- /react-text --></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow down big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="arrow down icon"></i>
+                                            <!-- react-text: 922 --> <!-- /react-text --></button>
+                                    </div>
+                                    <div class="column">
+                                        <button class="ui icon button"><i aria-hidden="true"
+                                                                          class="arrow right big fitted icon fa-rotate-45"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui header">Déplacement Tête</div>
+                            <div class="ui stretched center aligned three column grid">
+                                <div class="row">
+                                    <div class="column"></div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="chevron up icon"></i>
+                                            <!-- react-text: 934 --> <!-- /react-text --></button>
+                                    </div>
+                                    <div class="column"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="chevron left icon"></i>
+                                            <!-- react-text: 940 --> <!-- /react-text --></button>
+                                    </div>
+                                    <div class="column"><i aria-hidden="true"
+                                                           class="reddit alien huge fitted icon"
+                                                           style="color: rgb(243, 156, 18);"></i></div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="chevron right icon"></i>
+                                            <!-- react-text: 946 --> <!-- /react-text --></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column"></div>
+                                    <div class="column">
+                                        <button class="ui massive icon button"><i aria-hidden="true"
+                                                                                  class="chevron down icon"></i>
+                                            <!-- react-text: 952 --> <!-- /react-text --></button>
+                                    </div>
+                                    <div class="column"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui container" style="margin: 2em;">
+                        <div class="ui center aligned header">Autres fonction</div>
+                        <h3 class="ui left aligned header"><!-- react-text: 957 -->Mode rasta
+                            <!-- /react-text --></h3>
+                        <div class="ui fluid action labeled input" data-children-count="1">
+                            <div class="ui label label"><!-- react-text: 960 -->Pendant
+                                <!-- /react-text --></div>
+                            <input type="text" placeholder="X secondes">
+                            <button class="ui button button">Executer</button>
+                        </div>
+                        <h3 class="ui left aligned header"><!-- react-text: 964 -->Mode parlotte
+                            <!-- /react-text --></h3>
+                        <div class="ui fluid action labeled input" data-children-count="1">
+                            <div class="ui label label"><!-- react-text: 967 -->Faire dire
+                                <!-- /react-text --></div>
+                            <input type="text" placeholder="Coucou">
+                            <button class="ui button button">Executer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div style="text-align: center; margin: 50px;">3iL © 2019</div>
+</footer>
+</div>
+
+<script type="text/javascript">
+function openTabs(evt, tabName) {
+var i, tabcontent, tablinks;
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+document.getElementById(tabName).style.display = "block";
+evt.currentTarget.className += " active";
+}
+</script>
+
+<!--script type="text/javascript">
+function loadActions() {
+if ($("#content").css("display") == "none") {
+    $("#content").css("display", "flex");
+    $("#actionTab").addClass("active");
+} else {
+    $("#content").css("display", "none");
+    $("#actionTab").removeClass("active");
+}
+}
+</script-->
