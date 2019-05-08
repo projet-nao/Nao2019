@@ -7,157 +7,459 @@
             </div>
         </div>
     </div>
-        <div class="padding-top">
-            <div class="ui fluid container">
-                <div class="ui top attached tabular menu">
-                    <a class="item tablinks" onclick="openTabs(event, 'ctrlContent')">Controle pas à pas</a>
-                    <a class="item tablinks active" onclick="openTabs(event, 'actContent')">Actions</a>
-                    <a class="item tablinks" onclick="openTabs(event, 'infosContent')">Infos</a>
+    <div class="padding-top">
+        <div class="ui fluid container">
+            <div class="ui top attached tabular menu">
+                <a class="item tablinks" onclick="openTabs(event, 'ctrlContent')">Controle pas à pas</a>
+                <a class="item tablinks active" onclick="openTabs(event, 'actContent')">Actions</a>
+                <a class="item tablinks" onclick="openTabs(event, 'infosContent')">Infos</a>
+            </div>
+            <div class="ui bottom attached segment tabContent" id ="actContent">
+                <div class="ui fluid container">
+                    <button class="ui massive button" style="margin: 5px;">Tai Tchi</button>
+                    <button class="ui massive button" style="margin: 5px;">Air Guitar</button>
+                    <button class="ui massive button" style="margin: 5px;">Chercher la balle</button>
+                    <button class="ui massive button" style="margin: 5px;">Mode pause</button>
+                    <button class="ui massive button" style="margin: 5px;">Réveil</button>
                 </div>
-                <div class="ui bottom attached segment tabContent" id ="actContent">
-                    <div class="ui fluid container">
-                        <button class="ui massive button" style="margin: 5px;">Tai Tchi</button>
-                        <button class="ui massive button" style="margin: 5px;">Air Guitar</button>
-                        <button class="ui massive button" style="margin: 5px;">Chercher la balle</button>
-                        <button class="ui massive button" style="margin: 5px;">Mode pause</button>
-                        <button class="ui massive button" style="margin: 5px;">Réveil</button>
+            </div>
+            <div class="ui bottom attached segment tabContent" id ="ctrlContent" style = "display: none">
+                <div id = "mainTab">
+                    <div class="ui fluid center aligned container">
+                        <h3 class="ui header">Ces actions ne fonctionnent que si le robot n'est pas en mode pause</h3><br>
                     </div>
-                </div>
-                <div class="ui bottom attached segment tabContent" id ="ctrlContent" style = "display: none">
-                    <div id = "mainTab">
-                        <div class="ui fluid center aligned container">
-                            <h3 class="ui header">Ces actions ne fonctionnent que si le robot n'est pas en mode pause</h3><br>
-                        </div>
-                        <div class="ui fluid container">
-                            <div class="ui divided center aligned equal width grid">
-                                <div class="column">
-                                    <div class="ui header">Déplacement Corps</div>
-                                    <div class="ui stretched center aligned three column grid">
-                                        <div class="row">
-                                            <div class="column">
-                                                <button class="ui icon button">
-                                                    <i aria-hidden="true" class="arrow left big fitted icon fa-rotate-45"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="arrow up icon"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column">
-                                                <button class="ui icon button"><i aria-hidden="true" class="arrow up big fitted icon fa-rotate-45"></i>
-                                                </button>
-                                            </div>
+                    <div class="ui fluid container">
+                        <div class="ui divided center aligned equal width grid">
+                            <div class="column">
+                                <div class="ui header">Déplacement Corps</div>
+                                <div class="ui stretched center aligned three column grid">
+                                    <div class="row">
+                                        <div class="column">
+                                            <button class="ui icon button">
+                                                <i aria-hidden="true" class="arrow left big fitted icon fa-rotate-45"></i>
+                                            </button>
                                         </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="arrow left icon"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column"><i aria-hidden="true" class="reddit alien huge fitted icon" style="color: rgb(243, 156, 18);"></i>
-                                            </div>
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="arrow right icon"></i>
-                                                </button>
-                                            </div>
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="arrow up icon"></i>
+                                            </button>
                                         </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <button class="ui icon button">
-                                                    <i aria-hidden="true" class="arrow down big fitted icon fa-rotate-45"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="arrow down icon"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column">
-                                                <button class="ui icon button">
-                                                    <i aria-hidden="true" class="arrow right big fitted icon fa-rotate-45"></i>
-                                                </button>
-                                            </div>
+                                        <div class="column">
+                                            <button class="ui icon button"><i aria-hidden="true" class="arrow up big fitted icon fa-rotate-45"></i>
+                                            </button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="column">
-                                    <div class="ui header">Déplacement Tête</div>
-                                    <div class="ui stretched center aligned three column grid">
-                                        <div class="row">
-                                            <div class="column"></div>
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="chevron up icon"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column"></div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="arrow left icon"></i>
+                                            </button>
                                         </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="chevron left icon"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column">
-                                                <i aria-hidden="true" class="reddit alien huge fitted icon" style="color: rgb(243, 156, 18);"></i>
-                                            </div>
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="chevron right icon"></i>
-                                                </button>
-                                            </div>
+                                        <div class="column"><i aria-hidden="true" class="reddit alien huge fitted icon" style="color: rgb(243, 156, 18);"></i>
                                         </div>
-                                        <div class="row">
-                                            <div class="column"></div>
-                                            <div class="column">
-                                                <button class="ui massive icon button">
-                                                    <i aria-hidden="true" class="chevron down icon"></i>
-                                                </button>
-                                            </div>
-                                            <div class="column"></div>
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="arrow right icon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <button class="ui icon button">
+                                                <i aria-hidden="true" class="arrow down big fitted icon fa-rotate-45"></i>
+                                            </button>
+                                        </div>
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="arrow down icon"></i>
+                                            </button>
+                                        </div>
+                                        <div class="column">
+                                            <button class="ui icon button">
+                                                <i aria-hidden="true" class="arrow right big fitted icon fa-rotate-45"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="ui container" style="margin: 2em;">
-                                <div class="ui center aligned header">Autres fonction</div>
-                                <h3 class="ui left aligned header">Mode rasta</h3>
-                                <div class="ui fluid action labeled input" data-children-count="1">
-                                    <div class="ui label label">Pendant</div>
-                                    <input type="text" placeholder="X secondes">
-                                    <button class="ui button button">Executer</button>
+                            <div class="column">
+                                <div class="ui header">Déplacement Tête</div>
+                                <div class="ui stretched center aligned three column grid">
+                                    <div class="row">
+                                        <div class="column"></div>
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="chevron up icon"></i>
+                                            </button>
+                                        </div>
+                                        <div class="column"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="chevron left icon"></i>
+                                            </button>
+                                        </div>
+                                        <div class="column">
+                                            <i aria-hidden="true" class="reddit alien huge fitted icon" style="color: rgb(243, 156, 18);"></i>
+                                        </div>
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="chevron right icon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column"></div>
+                                        <div class="column">
+                                            <button class="ui massive icon button">
+                                                <i aria-hidden="true" class="chevron down icon"></i>
+                                            </button>
+                                        </div>
+                                        <div class="column"></div>
+                                    </div>
                                 </div>
-                                <h3 class="ui left aligned header">Mode parlotte</h3>
-                                <div class="ui fluid action labeled input" data-children-count="1">
-                                    <div class="ui label label">Faire dire</div>
-                                    <input type="text" placeholder="Coucou">
-                                    <button class="ui button button">Executer</button>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="ui container" style="margin: 2em;">
+                            <div class="ui center aligned header">Autres fonction</div>
+                            <h3 class="ui left aligned header">Mode rasta</h3>
+                            <div class="ui fluid action labeled input" data-children-count="1">
+                                <div class="ui label label">Pendant</div>
+                                <input type="text" placeholder="X secondes">
+                                <button class="ui button button">Executer</button>
+                            </div>
+                            <h3 class="ui left aligned header">Mode parlotte</h3>
+                            <div class="ui fluid action labeled input" data-children-count="1">
+                                <div class="ui label label">Faire dire</div>
+                                <input type="text" placeholder="Coucou">
+                                <button class="ui button button">Executer</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="ui bottom attached segment tabContent" id ="infosContent" style = "display: none">
+                <div class="ui fluid center aligned container">
+                    <h3 class="ui header">
+                        Informations concernant le robot paulo
+                    </h3><br>
+                    <table class="table table-hover table-sm table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" style="flex: 80 0 auto; width: 80px;">NOM LOGIQUE DU CAPTEUR</th>
+                                <th scope="col" style="flex: 80 0 auto; width: 80px;">LIBELLE DU CAPTEUR</th>
+                                <th scope="col" style="flex: 80 0 auto; width: 80px;">VALEUR</th>
+                                <th scope="col" style="flex: 80 0 auto; width: 80px;">SEUIL D'ALERTE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>battery</td>
+                                <td>Niveau de la batterie</td>
+                                <td>0%</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td>lElbowTemperature</td>
+                                <td>Température du coude gauche</td>
+                                <td>0°C</td>
+                                <td>60°C</td>
+                            </tr>
+                            <tr>
+                                <td>lFootWeight</td>
+                                <td>Poids du pied gauche</td>
+                                <td>0 kg</td>
+                                <td>5kg</td>
+                            </tr>
+                            <tr>
+                                <td>lHipTemperature</td>
+                                <td>Température de la hanche gauche</td>
+                                <td>0°C</td>
+                                <td>60°C</td>
+                            </tr>
+                            <tr>
+                                <td>lKneeTemperature</td>
+                                <td>Température du genou gauche</td>
+                                <td>0°C</td>
+                                <td>60°C</td>
+                            </tr>
+                            <tr>
+                                <td>lSoulderTemperature</td>
+                                <td>Température de l'épaule gauche</td>
+                                <td>0°C</td>
+                                <td>60°C</td>
+                            </tr>
+                            <tr>
+                                <td>rElbowTemperature</td>
+                                <td>Température du coude droit</td>
+                                <td>0°C</td>
+                                <td>60°C</td>
+                            </tr>
+                            <tr>
+                                <td>rFootWeight</td>
+                                <td>Poids du pied droit</td>
+                                <td>0 kg</td>
+                                <td>5kg</td>
+                            </tr>
+                            <tr>        
+                                <td>rHipTemperature</td>
+                                <td>Température de la hanche droite</td>
+                                <td>0°C</td>
+                                <td>60°C</td>
+                            </tr>
+                            <tr>
+                                <td>rKneeTemperature</td>
+                                <td>Température du genou droit</td>
+                                <td>0°C</td>
+                                <td>60°C</td>
+                            </tr>
+                            <tr>
+                                <td>rShoulderTemperature</div>
+                                <td>Température de l'épaule droite</div>
+                                <td>0°C</div>
+                                <td>60°C</div>
+                            </tr>
+                            <tr>
+                                <td>tempCPU</div>
+                                <td>Température CPU</div>
+                                <td>0°C</div>
+                                <td>90°C</div>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!--div class="ReactTable">
+                        <div class="rt-table">
+                            <div class="rt-thead -header" style="min-width: 320px;">
+                                <div class="rt-tr">
+                                    <div class=" rt-resizable-header -cursor-pointer rt-th" style="flex: 80 0 auto; width: 80px;">
+                                        <div class="rt-resizable-header-content">NOM LOGIQUE DU CAPTEUR</div>
+                                        <div class="rt-resizer"></div>
+                                    </div>
+                                    <div class=" rt-resizable-header -cursor-pointer rt-th" style="flex: 80 0 auto; width: 80px;">
+                                        <div class="rt-resizable-header-content">LIBELLE DU CAPTEUR</div>
+                                        <div class="rt-resizer"></div>
+                                    </div>
+                                    <div class=" rt-resizable-header -cursor-pointer rt-th" style="flex: 80 0 auto; width: 80px;">
+                                        <div class="rt-resizable-header-content">VALEUR</div>
+                                        <div class="rt-resizer"></div>
+                                    </div>
+                                    <div class=" rt-resizable-header -cursor-pointer rt-th" style="flex: 80 0 auto; width: 80px;">
+                                        <div class="rt-resizable-header-content">SEUIL D'ALERTE</div>
+                                        <div class="rt-resizer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rt-tbody" style="min-width: 320px;">
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -odd">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">battery</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Niveau de la batterie</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0%</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">20%</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -even">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">lElbowTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température du coude gauche</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -odd">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">lFootWeight</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Poids du pied gauche</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0 kg</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">5kg</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -even">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">lHipTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température de la hanche gauche</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -odd">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">lKneeTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température du genou gauche</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -even">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">lSoulderTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température de l'épaule gauche</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -odd">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">rElbowTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température du coude droit</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -even">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">rFootWeight</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Poids du pied droit</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0 kg</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">5kg</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -odd">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">rHipTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température de la hanche droite</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -even">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">rKneeTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température du genou droit</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -odd">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">rShoulderTemperature</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température de l'épaule droite</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">60°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -even">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">tempCPU</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">Température CPU</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">0°C</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">90°C</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="rt-tr-group">
+                                    <div class="rt-tr -padRow">
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                        <div class="rt-td" style="flex: 80 0 auto; width: 80px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div-->
+                        <!--div class="-pagination">
+                            <div class="-previous"><button type="button" disabled="" class="-btn">Précédent</button></div>
+                            <div class="-center">
+                                <span class="-pageInfo">Page X 
+                                    <div class="-pageJump">
+                                        <input type="number" value="1">
+                                    </div> sur <span class="-totalPages">1</span>
+                                </span>
+                                <span class="select-wrap -pageSizeOptions">
+                                    <select>
+                                        <option value="5">5 lignes</option>
+                                        <option value="10">10 lignes</option>
+                                        <option value="20">20 lignes</option>
+                                        <option value="25">25 lignes</option>
+                                        <option value="50">50 lignes</option>
+                                        <option value="100">100 lignes</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="-next"><button type="button" disabled="" class="-btn">Suivant</button></div>
+                        </div-->
+                        <!-- <div class="-loading">
+                            <div class="-loading-inner">Chargement...</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     <footer>
         <div style="text-align: center; margin: 50px;">3iL © 2019</div>
     </footer>
 </div>
-
+                            
 <script>
     function openTabs(evt, contentName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabContent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      $("#"+contentName).css("display","flex");
-      evt.currentTarget.className += " active";
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabContent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        $("#"+contentName).css("display","flex");
+        evt.currentTarget.className += " active";
     }
 </script>
