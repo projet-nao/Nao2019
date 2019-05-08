@@ -76,7 +76,7 @@ img .ui .avatar .image {
     -o-transform:rotate(45deg);
     transform:rotate(45deg)
 }
-.batteryPourcent {
+#batteryPourcent {
     z-index:999;
     position:absolute;
     font-weight:700;

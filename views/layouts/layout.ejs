@@ -35,8 +35,10 @@
 	<link rel="stylesheet" href="/styles/bootstrap.min.css">
 	<link rel="stylesheet" href="/styles/custom.css">
 	<link rel="stylesheet" href="/styles/importer.css">
+	<link rel="stylesheet" href="/styles/Lato.css">
 	<link rel="stylesheet" href="/styles/semantic.min.css">
 	<!--STYLES END-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
 <body>
@@ -49,10 +51,10 @@
 			<h1 class="header_title">NAOBOX V2</h1>
 		</div>
 		<div class="item">
-			<div class="batteryPourcent">0%</div>
+			<div id="batteryPourcent"></div>
 			<i class="icons" style="font-size: 2.5em;">
-				<i aria-hidden="true" class="battery empty icon"></i>
-				<i aria-hidden="true" class="red dont icon"></i>
+				<i aria-hidden="true" id="batteryIcon" class="battery empty icon"></i>
+				<i aria-hidden="true" id="connectionStatus" class="red dont icon"></i>
 			</i>
 		</div>
 		<div class="item">
@@ -69,19 +71,17 @@
 			<a href="../assets/Manuel_utilisation.pdf" class="doc" target="_blank" title="Manuel d'utilisation">
 				<div class="item">
 					<button class="ui icon inverted button">
-						<i aria-hidden="true" class="book icon"></i><!-- react-text: 29 --> <!-- /react-text -->
+						<i aria-hidden="true" class="book icon"></i>
 					</button>
 				</div>
 			</a>
 			<div class="item">
 				<button title="Cliquez pour éteindre le robot" class="ui red icon inverted button">
-					<i aria-hidden="true" class="power icon"></i><!-- react-text: 33 --> <!-- /react-text -->
-				</button><!-- react-empty: 34 -->
+					<i aria-hidden="true" class="power icon"></i>
+				</button>
 			</div>
 		</div>
 	</div>
-
-	<style type="text/css">@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin);</style>
 	<%- body %>
 	
 	
@@ -157,5 +157,16 @@
 	<script src="/js/jquery-3.4.1.min.js"></script>
 	<script src="/js/semantic.min.js"></script>
 	<!--SCRIPTS END-->
+
+	<script>
+		var connected = false;
+		var battery_value = 60;
+		if(connected){
+			if()
+			/*https://fontawesome.com/icons*/
+		}else{
+			$("#batteryPourcent").text("0%");
+		}
+	</script>
 </body>
 </html>
