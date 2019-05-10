@@ -52,10 +52,10 @@
 		</div>
 		<div class="item">
 			<div id="batteryPourcent"></div>
-			<i class="icons" style="font-size: 2.5em;">
-				<i aria-hidden="true" id="batteryIcon" class="battery empty icon"></i>
-				<i aria-hidden="true" id="connectionStatus" class="red dont icon"></i>
-			</i>
+			<span class="fa-stack">
+				<i aria-hidden="true" id="batteryIcon" class="fas fa-battery-empty fa-stack-2x"></i>
+				<i aria-hidden="true" id="connectionStatus" style="color: #ff0000;" class="fas fa-ban fa-stack-2x"></i>
+			</span>
 		</div>
 		<div class="item">
 			<button class="ui right labeled icon button disabled" tabindex="-1">
@@ -153,20 +153,10 @@
 	
 	<!--SCRIPTS-->
 	<script src="/dependencies/sails.io.js"></script>
+	<script src="/js/battery_displayer.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/jquery-3.4.1.min.js"></script>
 	<script src="/js/semantic.min.js"></script>
 	<!--SCRIPTS END-->
-
-	<script>
-		var connected = false;
-		var battery_value = 60;
-		if(connected){
-			if()
-			/*https://fontawesome.com/icons*/
-		}else{
-			$("#batteryPourcent").text("0%");
-		}
-	</script>
 </body>
 </html>
