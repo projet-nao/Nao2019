@@ -85,9 +85,12 @@ Ces tags sont décris dans la [documentation de SailsJS](https://sailsjs.com/doc
 `<%- someRawHTML %>` permet d'afficher du HTML, pour afficher un élément pour le DOM (un onglet d'une navbar par exemple)
 `<% if (condition) %>` permet d'éxécuter du JavaScript.  
 Par exemple `<% if (connected) { %> <a>Logout</a> <% } %>` affiche `<a>Logout</a>` si le client est connecté...   
-Seule la première balise change le type d'affichage, la fermeture est toujours `%>`.
+Seule la balise d'ouverture change le type d'affichage, la fermeture est toujours `%>`.
 
 Le controlleur peut contacter les fichiers de Model pour faire des requêtes à la base de données.
+
+Le fichier `config/routes.js` joue un rôle intéressant :  
+Il permet de déclarer les URL accessibles dans le cadre du site, soit une vue soit un controller. La syntaxe de ce fichier est encore une fois du JSON. Plus de détails sont disponibles dans la [documentation du Framework](https://sailsjs.com/documentation/concepts/routes).
 
 <!-- Internally, Sails used [`sails-generate@1.16.8`](https://github.com/balderdashy/sails-generate/tree/v1.16.8/lib/core-generators/new). -->
 
