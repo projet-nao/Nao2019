@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>New Sails App</title>
+	<title>NAOBOX 3IL 2019</title>
 	
 	<!-- Viewport mobile tag for sensible mobile support -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -43,24 +43,45 @@
 
 <body>
 	<!-- Image and text -->
-	<nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+		<a class="navbar-brand" href=<%=home_link%> >
 			<img src="./images/header.png" title="Knock Knock !" class="header_logo" >
 		</a>
-		<span class="navbar-brand mb-0 h1 header_title">NAOBOX 3IL</span>
-		<div>
-			<span class="fa-stack">
-				<i aria-hidden="true" id="batteryIcon" class="fas fa-battery-empty fa-stack-2x"></i>
-				<i aria-hidden="true" id="connectionStatus" style="color: #ff0000;" class="fas fa-ban fa-stack-2x"></i>
-			</span>
-		</div>
-		<div class="btn-group centered-navBtn">
-			<button id="stop-btn" class="btn btn-secondary"><div>Arrêt comportement</div>  <i aria-hidden="true" style="position: absolute;right: 8%;top: 25%;" class="fas fa-times"></i></button>
-		</div>
-		<div class="right-aligned-content">
-			<button class="btn btn-outline-secondary my-2 my-sm-0"><i class="fas fa-tools"></i></button>
-			<button class="btn btn-outline-secondary my-2 my-sm-0 right-content"><i class="fas fa-book"></i></button>
-			<button class="btn btn-outline-danger my-2 my-sm-0 right-content"><i class="fas fa-power-off"></i></button>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse bg-dark" id="navbarTogglerDemo01">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a href=<%=home_link%> >
+						<span class="navbar-brand mb-0 h1 header_title">NAOBOX 3IL</span>
+					</a>
+				</li>
+				<li class="nav-item">
+						<div>
+							<span class="fa-stack">
+								<i aria-hidden="true" id="batteryIcon" class="fas fa-battery-empty fa-stack-2x"></i>
+								<i aria-hidden="true" id="connectionStatus" style="color: #ff0000;" class="fas fa-ban fa-stack-2x"></i>
+							</span>
+						</div>
+				</li>
+				<li class="nav-item">
+					<div class="btn-group centered-navBtn">
+						<button id="stop-btn" class="btn btn-secondary"><div>Arrêt comportement</div>  <i aria-hidden="true" style="position: absolute;right: 8%;top: 25%;" class="fas fa-times"></i></button>
+					</div>
+				</li>
+				<li class="nav-item">
+					<div class="right-aligned-content">
+						<a href=<%=login_page%>>
+							<button class="btn btn-outline-secondary my-2 my-sm-0"><i class="fas fa-tools"></i></button>
+						</a>
+						<a href="https://github.com/projet-nao/Nao2019/tree/NAO-1-Test">
+							<button class="btn btn-outline-secondary my-2 my-sm-0 right-content"><i class="fas fa-book"></i></button>
+						</a>
+						<button class="btn btn-outline-danger my-2 my-sm-0 right-content"><i class="fas fa-power-off"></i></button>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</nav>
 	<!--<div class="ui borderless inverted top fixed menu">
@@ -103,6 +124,9 @@
 		</div>
 	</div>-->
 	<%- body %>
+	<footer>
+		<div style="text-align: center; margin: 50px;">3iL © 2019</div>
+	</footer>
 	
 	
 	
@@ -175,9 +199,10 @@
 	<script src="/dependencies/sails.io.js"></script>
 	<script src="/js/all.js"></script>
 	<script src="/js/battery_displayer.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/jquery-3.4.1.min.js"></script>
 	<script src="/js/semantic.min.js"></script>
 	<!--SCRIPTS END-->
+	<!--JQuery MUST be before bootstrap for the navbar to work !! -->
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

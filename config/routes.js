@@ -19,7 +19,16 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/accueil' },
+  '/': { view: 'pages/accueil', locals: {
+      home_link: "#",
+      login_page:"/login"
+    }
+  },
+  '/login': { view:'pages/login', locals: {
+      home_link: "/",
+      login_page:"#"
+    }
+  }
 
 
   /***************************************************************************
