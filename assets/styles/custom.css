@@ -1,9 +1,3 @@
-.notifications {
-    position:fixed;
-    bottom:5px;
-    right:5px;
-    z-index:999
-}
 .header_logo {
     width:5em!important
 }
@@ -16,7 +10,7 @@
     z-index:1
 }
 .padding-top {
-    padding-top:8em
+    padding-top:4em
 }
 .simple-padding {
     padding-top:5px
@@ -70,11 +64,11 @@ img .ui .avatar .image {
     width:200px
 }
 .fa-rotate-45 {
-    -webkit-transform:rotate(45deg);
+    /*-webkit-transform:rotate(45deg);
     -moz-transform:rotate(45deg);
     -ms-transform:rotate(45deg);
     -o-transform:rotate(45deg);
-    transform:rotate(45deg)
+    transform:rotate(45deg)*/
 }
 #batteryPourcent {
     z-index:999;
@@ -92,4 +86,80 @@ img .ui .avatar .image {
 .container {
     padding-left : 0px;
     padding-right: 0px;
-}   
+}
+
+.right-aligned-content {
+    position: absolute;
+    right: 20px;
+}
+
+.centered-navBtn {
+    margin-right: 75%;
+    margin-left: 25%;
+}
+
+#stop-btn {
+    width: 175px;
+    text-align: left;
+}
+
+.right-aligned-content .right-content {
+    margin-left: 10px;
+}
+
+.close-notification {
+    position: absolute;
+    right:10px;
+    top:10px;
+    cursor:pointer;
+}
+
+/*.navbar {
+    background: #1b1c1d;
+    border: 0 solid transparent;
+    width: 100%;
+    position: fixed;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    border-radius: 0 !important;
+    position: fixed;
+    z-index: 101;
+    margin: 0;
+    width: 100%;
+    border: 0 solid transparent;
+        border-top-color: transparent;
+        border-top-style: solid;
+        border-top-width: 0px;
+        border-right-color: transparent;
+        border-right-style: solid;
+        border-right-width: 0px;
+        border-left-color: transparent;
+        border-left-style: solid;
+        border-left-width: 0px;
+    background: #1b1c1d;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 0;
+    font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1rem 0;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    background: #fff;
+    font-weight: 400;
+    border: 1px solid rgba(34,36,38,.15);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    min-height: 2.85714286em;
+}*/
+
+.navbar{
+    height : 70px
+}
