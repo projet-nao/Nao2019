@@ -20,3 +20,10 @@
     padding-bottom: 1em;
     padding-left: 1em;
 }
+
+.close-notification {
+    position: absolute;
+    right:10px;
+    top:10px;
+    cursor:pointer;
+}
