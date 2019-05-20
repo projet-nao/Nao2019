@@ -9,7 +9,7 @@
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div-->
-  <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="connect()">Sign in</button>
+  <button class="btn btn-lg btn-primary btn-block" id="confirm" type="submit" onclick="connect()">Sign in</button>
 </form>
 <script>
 /* Permet d'envoyer le formulaire en appuyant sur la touche Entrée */
@@ -22,7 +22,7 @@ $('form').bind("keypress", function(e) {
 });
 var nbconnect = 0;
 
-function connect(){
+$("#confirm").click(function(){
   var login=$("#inputEmail")[0].value;
   var pw = $("#inputPassword")[0].value;
   if(login.indexOf("@") ){
@@ -37,31 +37,58 @@ function connect(){
   console.log(login);
   console.log(pw);
 
+  $.ajax({
+    url : 'send_connect_request.php',
+    type : 'POST',
+    date : 'email=' + login + '&password' + pw,
+    dataType : 'html'
+    });
+});
+
+/*
+function connect(){
+  var login=$("#inputEmail")[0].value;
+  var pw = $("#inputPassword")[0].value;
+  if(login.indexOf("@") ){
+    console.log("true");
+  }else{
+    console.log("false");
+  }
+  var controlInjection = 'INSERT';
+  if (controlInjection.indexOf(login) != -1 || controlInjection.indexOf(pw) != -1){
+    console.log('Les identifiants ne doivent pas contenir du code SQL');
+  }
+  console.log(login);
+  console.log(pw);
   post('/loginCTRL', {login : login, password : pw});
 }
+*/
 </script>
 
+
 <script>
-function post(path, params, method='post') {
+/*
+  function post(path, params, method='post') {
 
-// The rest of this code assumes you are not using a library.
-// It can be made less wordy if you use one.
-const form = document.createElement('form');
-form.method = method;
-form.action = path;
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    const form = document.createElement('form');
+    form.method = method;
+    form.action = path;
 
-for (const key in params) {
-if (params.hasOwnProperty(key)) {
-const hiddenField = document.createElement('input');
-hiddenField.type = 'hidden';
-hiddenField.name = key;
-hiddenField.value = params[key];
+    for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = key;
+    hiddenField.value = params[key];
 
-form.appendChild(hiddenField);
+    form.appendChild(hiddenField);
+    }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
 }
-}
-
-document.body.appendChild(form);
-form.submit();
-}
+/*
 </script>
