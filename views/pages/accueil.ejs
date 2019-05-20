@@ -1,10 +1,9 @@
 <div id="app">
     <div class="nao notifications">
-        <div class="ui icon negative message">
-            <i class="fas fa-times close-notification" onclick="closeNotification()"></i>
+        <div id="notification1" class="nao negative message">
             <i class="fas fa-exclamation-circle fa-2x" style="margin-right: 10px;"></i>
-            <div>Le robot n'est pas connecté !
-            </div>
+            <div>Le robot n'est pas connecté !</div>
+            <i class="fas fa-times close-notification" style="left:0px" onclick="closeNotification(1)"></i>
         </div>
     </div>
     <div class="padding-top">
@@ -236,6 +235,9 @@
 </div>
                             
 <script>
+    setTimeout(function() {
+        newNotification("test");
+    }, 2000);
     function openTabs(evt, contentName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabContent");
@@ -250,11 +252,24 @@
         evt.currentTarget.className += " active";
     }
 
-    function closeNotification(){
+    function closeNotification(numNotif){
+        var idNotif= "#notification"+numNotif;
+        var notifications = $(idNotif);
+        if(notifications.length == 1){
+            notifications.remove();
+        }else{
+            console.log("err in notifications selection");
+        }
+    }
+
+    var numNotif=1;
+    function newNotification(message){
         var notifications = $(".notifications");
-        /*for(var i = 0 ; i < notifications.length ; i++){
-            notifications[i].css("display","none");
-        }*/
-        notifications.css("display","none");
+        numNotif++;
+        var notification ="<div id=\"notification"+numNotif+"\"class=\"nao negative message\">\
+            <i class=\"fas fa-exclamation-circle fa-2x\" style=\"margin-right: 10px;\"></i>\
+            <div>"+message+"</div>\
+            <i class=\"fas fa-times close-notification\" style=\"left:0px\" onclick=\"closeNotification("+numNotif+")\"></i></div>";
+        notifications.prepend(notification);
     }
 </script>
