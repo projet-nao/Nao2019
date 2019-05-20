@@ -36,6 +36,11 @@ module.exports = {
         var lastUser;
         try {
             lastUser = await Users.find({select: ['id']}).sort('id DESC').limit(1);
+            sails.log("lastUser.length : ");sails.log(lastUser.length);
+            if(!lastUser.length){
+                lastUser = [{id:0}];
+            }
+            sails.log(lastUser);
             result = await Users.create({
                 id:(lastUser[0].id)+1,
                 name:'Defrances',
