@@ -28,6 +28,14 @@ module.exports.routes = {
       home_link: "/",
       login_page:"#"
     }
+  },
+  '/loginCTRL':{
+    controller: 'UsersController',
+    action: 'login'
+  },
+  '/userADD':{
+    controller: 'UsersController',
+    action: 'createUser'
   }
 
 

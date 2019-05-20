@@ -17,6 +17,29 @@ module.exports = {
 		assert.equal('de', i18n.getLocale(), 'should return the new setting');
 	},
 
+    'check set defaultLocale when no default supplied': function () {
+        var i18n = new I18n({
+            locales: ['en', 'de'],
+            directory: './testlocales',
+            extension: '.json'
+        });
+
+        var loc = i18n.getLocale();
+        assert.equal('en', i18n.getLocale(), 'should return first locale setting from locales');
+    },
+
+    'check set defaultLocale when default supplied': function () {
+        var i18n = new I18n({
+            locales: ['en', 'de'],
+            directory: './testlocales',
+            extension: '.json',
+            defaultLocale: 'de'
+        });
+
+        var loc = i18n.getLocale();
+        assert.equal('de', i18n.getLocale(), 'should return default locale setting');
+    },
+
 	'check singular': function () {
 		var i18n = new I18n({
 			locales: ['en', 'de'],

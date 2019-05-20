@@ -44,7 +44,7 @@
 <body>
 	<!-- Image and text -->
 	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-		<a class="navbar-brand" href=<%=home_link%> >
+		<a class="navbar-brand" href=<%home_link%> >
 			<img src="./images/header.png" title="Knock Knock !" class="header_logo" >
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +72,7 @@
 				</li>
 				<li class="nav-item">
 					<div class="right-aligned-content">
-						<a href=<%=login_page%>>
+						<a href=<%=login_page==undefined ? login_page : "#"%> >
 							<button class="btn btn-outline-secondary my-2 my-sm-0"><i class="fas fa-tools"></i></button>
 						</a>
 						<a href="https://github.com/projet-nao/Nao2019/tree/NAO-1-Test">
