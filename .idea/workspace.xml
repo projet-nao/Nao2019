@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a0b7a8-8e82-4d18-ad8c-904e8ad376eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/pages/administration.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/administration.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/administration.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/pages/administration.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="238">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -214,12 +212,12 @@
       <workItem from="1558457653227" duration="1500000" />
       <workItem from="1558459948672" duration="2036000" />
       <workItem from="1558462019819" duration="1788000" />
-      <workItem from="1558463847680" duration="749000" />
+      <workItem from="1558463847680" duration="942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11735000" />
+    <option name="totallyTimeSpent" value="11928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -286,8 +284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/administration.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
         </state>
       </provider>
     </entry>
