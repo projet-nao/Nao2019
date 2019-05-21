@@ -1,0 +1,94 @@
+<form class="form-signin" style="width: 100%;max-width: 330px;padding: 15px;margin: auto;">
+  <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;margin-block-start: 96px;">Connexion</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+  <!--div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div-->
+  <button class="btn btn-lg btn-primary btn-block" id="confirm" type="submit" onclick="connect()">Sign in</button>
+</form>
+<script>
+/* Permet d'envoyer le formulaire en appuyant sur la touche Entrée */
+$('form').bind("keypress", function(e) {
+  if (e.keyCode == 13) {               
+    e.preventDefault();
+    connect();
+    return false;
+  }
+});
+var nbconnect = 0;
+
+$("#confirm").click(function(){
+  var login=$("#inputEmail")[0].value;
+  var pw = $("#inputPassword")[0].value;
+  if(login.indexOf("@") ){
+    console.log("true");
+  }else{
+    console.log("false");
+  }
+  var controlInjection = 'INSERT';
+  if (controlInjection.indexOf(login) != -1 || controlInjection.indexOf(pw) != -1){
+    console.log('Les identifiants ne doivent pas contenir du code SQL');
+  }
+  console.log(login);
+  console.log(pw);
+
+  $.ajax({
+    url : '/loginCTRL',
+    type : 'POST',
+    data : 'email=' + login + '&pw' + pw,
+    dataType : 'html'
+    });
+});
+
+/*
+function connect(){
+  var login=$("#inputEmail")[0].value;
+  var pw = $("#inputPassword")[0].value;
+  if(login.indexOf("@") ){
+    console.log("true");
+  }else{
+    console.log("false");
+  }
+  var controlInjection = 'INSERT';
+  if (controlInjection.indexOf(login) != -1 || controlInjection.indexOf(pw) != -1){
+    console.log('Les identifiants ne doivent pas contenir du code SQL');
+  }
+  console.log(login);
+  console.log(pw);
+  post('/loginCTRL', {login : login, password : pw});
+}
+*/
+</script>
+
+
+<script>
+/*
+  function post(path, params, method='post') {
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    const form = document.createElement('form');
+    form.method = method;
+    form.action = path;
+
+    for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = key;
+    hiddenField.value = params[key];
+
+    form.appendChild(hiddenField);
+    }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
+/*
+</script>

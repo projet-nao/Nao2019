@@ -1,0 +1,37 @@
+.nao.notifications {
+    position:fixed;
+    bottom:5px;
+    right:5px;
+    z-index:999;
+    align-items: center;
+    border-radius: .28571429rem;
+}
+
+.nao.negative.message{
+    background-color: #fff6f6;
+    color: #9f3a38;
+    -webkit-box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
+}
+
+.nao.message {
+    padding-top: 1.5em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: .28571429rem;
+}
+
+.close-notification {
+    position: relative;
+    left: 70px;
+    bottom: 20px;
+    cursor: pointer;
+}
