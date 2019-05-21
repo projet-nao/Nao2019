@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a0b7a8-8e82-4d18-ad8c-904e8ad376eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/administration.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/administration.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/pages/administration.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="68">
+              <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -94,6 +95,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,7 +169,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,18 +213,19 @@
       <workItem from="1558457653227" duration="1500000" />
       <workItem from="1558459948672" duration="2036000" />
       <workItem from="1558462019819" duration="1788000" />
-      <workItem from="1558463847680" duration="1235000" />
+      <workItem from="1558463847680" duration="1463000" />
+      <workItem from="1558465663373" duration="35000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12221000" />
+    <option name="totallyTimeSpent" value="12484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15298508" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15458423" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -284,8 +286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/administration.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="68">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
         </state>
       </provider>
     </entry>
