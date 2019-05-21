@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>New Sails App</title>
+	<title>NAOBOX 3IL 2019</title>
 	
 	<!-- Viewport mobile tag for sensible mobile support -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -35,13 +35,56 @@
 	<link rel="stylesheet" href="/styles/bootstrap.min.css">
 	<link rel="stylesheet" href="/styles/custom.css">
 	<link rel="stylesheet" href="/styles/importer.css">
+	<link rel="stylesheet" href="/styles/Lato.css">
+	<link rel="stylesheet" href="/styles/notifications.css">
 	<link rel="stylesheet" href="/styles/semantic.min.css">
 	<!--STYLES END-->
 </head>
 
 <body>
 	<!-- Image and text -->
-	<div class="ui borderless inverted top fixed menu">
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+		<a class="navbar-brand" href=<%home_link%> >
+			<img src="./images/header.png" title="Knock Knock !" class="header_logo" >
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse bg-dark" id="navbarTogglerDemo01">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a href=<%=home_link%> >
+						<span class="navbar-brand mb-0 h1 header_title">NAOBOX 3IL</span>
+					</a>
+				</li>
+				<li class="nav-item">
+						<div>
+							<span class="fa-stack">
+								<i aria-hidden="true" id="batteryIcon" class="fas fa-battery-empty fa-stack-2x"></i>
+								<i aria-hidden="true" id="connectionStatus" style="color: #ff0000;" class="fas fa-ban fa-stack-2x"></i>
+							</span>
+						</div>
+				</li>
+				<li class="nav-item">
+					<div class="btn-group centered-navBtn">
+						<button id="stop-btn" class="btn btn-secondary"><div>Arrêt comportement</div>  <i aria-hidden="true" style="position: absolute;right: 8%;top: 25%;" class="fas fa-times"></i></button>
+					</div>
+				</li>
+				<li class="nav-item">
+					<div class="right-aligned-content">
+						<a href=<%=login_page==undefined ? login_page : "#"%> >
+							<button class="btn btn-outline-secondary my-2 my-sm-0"><i class="fas fa-tools"></i></button>
+						</a>
+						<a href="https://github.com/projet-nao/Nao2019/tree/NAO-1-Test">
+							<button class="btn btn-outline-secondary my-2 my-sm-0 right-content"><i class="fas fa-book"></i></button>
+						</a>
+						<button class="btn btn-outline-danger my-2 my-sm-0 right-content"><i class="fas fa-power-off"></i></button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+<!-- 	<div class="ui borderless inverted top fixed menu">
 		<div class="item">
 			<img src="./images/header.png" title="Knock Knock !" class="header_logo">
 		</div>
@@ -49,15 +92,15 @@
 			<h1 class="header_title">NAOBOX V2</h1>
 		</div>
 		<div class="item">
-			<div class="batteryPourcent">0%</div>
-			<i class="icons" style="font-size: 2.5em;">
-				<i aria-hidden="true" class="battery empty icon"></i>
-				<i aria-hidden="true" class="red dont icon"></i>
-			</i>
+			<div id="batteryPourcent"></div>
+			<span class="fa-stack">
+				<i aria-hidden="true" id="batteryIcon" class="fas fa-battery-empty fa-stack-2x"></i>
+				<i aria-hidden="true" id="connectionStatus" style="color: #ff0000;" class="fas fa-ban fa-stack-2x"></i>
+			</span>
 		</div>
 		<div class="item">
 			<button class="ui right labeled icon button disabled" tabindex="-1">
-				<i aria-hidden="true" class="window close icon"></i>Arrêter l'action
+				<i aria-hidden="true" class="window close icon"><i class="fas fa-times" style="margin-top: 10px;"></i></i>Arrêter l'action
 			</button>
 		</div>
 		<div class="right menu">
@@ -69,20 +112,26 @@
 			<a href="../assets/Manuel_utilisation.pdf" class="doc" target="_blank" title="Manuel d'utilisation">
 				<div class="item">
 					<button class="ui icon inverted button">
-						<i aria-hidden="true" class="book icon"></i><!-- react-text: 29 --> <!-- /react-text -->
+						<i aria-hidden="true" class="book icon"></i>
 					</button>
 				</div>
 			</a>
 			<div class="item">
 				<button title="Cliquez pour éteindre le robot" class="ui red icon inverted button">
-					<i aria-hidden="true" class="power icon"></i><!-- react-text: 33 --> <!-- /react-text -->
-				</button><!-- react-empty: 34 -->
+					<i aria-hidden="true" class="power icon"></i>
+				</button>
 			</div>
 		</div>
-	</div>
-
-	<style type="text/css">@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin);</style>
+	</div> -->
 	<%- body %>
+    <input type="text" id="ip-nao" />
+    <input type="button" id="btn-connect" value="Connexion"/>
+    <input type="button" id="btn-video" value="Activer caméras"/><br/>
+    <canvas id="cameraT"></canvas><br />
+	<canvas id="cameraB"></canvas>
+	<footer>
+		<div style="text-align: center; margin: 50px;">3iL © 2019</div>
+	</footer>
 	
 	
 	
@@ -153,9 +202,34 @@
 	
 	<!--SCRIPTS-->
 	<script src="/dependencies/sails.io.js"></script>
+	<script src="/dependencies/jquery-3.4.1.min.js"></script>
+	<script src="/js/battery_displayer.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="/js/fontawesome.js"></script>
 	<script src="/js/semantic.min.js"></script>
+	<script src="/js/jsnao.js"></script>
 	<!--SCRIPTS END-->
+	<script type="text/javascript">
+    $("#btn-connect").click(function() {
+        var ipNao = $("#ip-nao").val();
+		var jsQim = "http://"+ipNao+"/libs/qimessaging/1.0/qimessaging.js";
+		try {
+			$.ajax({
+				url: jsQim,
+				dataType: "script"
+			}).done(function() {
+				jsnao.connect(ipNao);
+			}).fail(function() {
+				alert("La librairie QImessaging de NAO ne peut pas être executée!");
+			});
+		} catch(err) {
+			alert("Une erreur s'est produite: \n"+ err);
+		}
+    });
+    $("#btn-camera").click(function() {
+        jsnao.display_video();
+    });
+	</script>
+	<!--JQuery MUST be before bootstrap for the navbar to work !! -->
 </body>
 </html>
