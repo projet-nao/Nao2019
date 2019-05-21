@@ -240,7 +240,8 @@
 				url: jsQim,
 				dataType: "script"
 			}).done(function() {
-				jsnao.connect(ipNao).done(newNotification("Nao connecté !"));
+				jsnao.connect(ipNao);
+                newNotification("Nao connecté !");
 			}).fail(function() {
 				alert("La librairie QImessaging de NAO ne peut pas être executée!");
 			});
