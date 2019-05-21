@@ -38,9 +38,9 @@ $("#confirm").click(function(){
   console.log(pw);
 
   $.ajax({
-    url : 'send_connect_request.php',
+    url : '/loginCTRL',
     type : 'POST',
-    date : 'email=' + login + '&password' + pw,
+    data : 'email=' + login + '&pw' + pw,
     dataType : 'html'
     });
 });
