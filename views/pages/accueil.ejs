@@ -235,9 +235,6 @@
 </div>
                             
 <script>
-    setTimeout(function() {
-        newNotification("test");
-    }, 2000);
     function openTabs(evt, contentName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabContent");
@@ -266,7 +263,7 @@
     function newNotification(message){
         var notifications = $(".notifications");
         numNotif++;
-        var notification ="<div id=\"notification"+numNotif+"\"class=\"nao negative message\">\
+        var notification ="<div id=\"notification"+numNotif+"\"class=\"nao message\">\
             <i class=\"fas fa-exclamation-circle fa-2x\" style=\"margin-right: 10px;\"></i>\
             <div>"+message+"</div>\
             <i class=\"fas fa-times close-notification\" style=\"left:0px\" onclick=\"closeNotification("+numNotif+")\"></i></div>";
