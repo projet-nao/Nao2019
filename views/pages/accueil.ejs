@@ -248,25 +248,4 @@
         $("#"+contentName).css("display","flex");
         evt.currentTarget.className += " active";
     }
-
-    function closeNotification(numNotif){
-        var idNotif= "#notification"+numNotif;
-        var notifications = $(idNotif);
-        if(notifications.length == 1){
-            notifications.remove();
-        }else{
-            console.log("err in notifications selection");
-        }
-    }
-
-    var numNotif=1;
-    function newNotification(message){
-        var notifications = $(".notifications");
-        numNotif++;
-        var notification ="<div id=\"notification"+numNotif+"\"class=\"nao message\">\
-            <i class=\"fas fa-exclamation-circle fa-2x\" style=\"margin-right: 10px;\"></i>\
-            <div>"+message+"</div>\
-            <i class=\"fas fa-times close-notification\" style=\"left:0px\" onclick=\"closeNotification("+numNotif+")\"></i></div>";
-        notifications.prepend(notification);
-    }
 </script>
