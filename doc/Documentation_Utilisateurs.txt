@@ -1,0 +1,62 @@
+Matériel prévu : 
+  - Rasberry Pi (Serveur + Point d'accès)
+  - Nao (robot) (=> préférer "paulo" (orange))
+  - Tablette Android (accès aux commandes)
+
+Matériel utilisé pour les tests : 
+  - Nao
+  - Un PC avec VirtualBox (ou autre) => VM Ubuntu (Serveur) + PC (accès aux commandes)
+  - Un téléphone portable connecté en 4G ou similaire (point d'accès)
+
+Pour la VM : Mode d'accès réseau : Accès par pont (ou "bridged")
+
+• Connecter Nao au point d'accès
+1) Se connecter directement à Nao en reliant un câble réseau du robot à un PC
+2) Accéder à la page web du robot => saisir son adresse IP comme URL 
+Notes : - Appuyer sur le bouton sur le ventre de Nao pour qu'il donne son adresse IP
+        - Des identifiants vous seront demandés pour accéder à la page -> login : "nao" ; password : "3ILRodez"
+
+3) Dans la page web du robot, sélectionner le point d'accès et saisir le mot de passe adéquat.
+Notes : le mot de passe dépend du point d'accès : 
+	- vous l'avez définit si vous utlisez un téléphone
+	- s'il s'agit du Raspberry avec l'ancienne version du site -> nom : "NAOBOX-3IL" ; mdp : "3ILRodez14"
+        - s'il s'agit du Raspberry avec la version récente du site -> nom : "NAOBOX-3IL" ; mdp : "3iLRodezNaoboxv2"
+A noter que les deux Raspberry ont le même nom. Il faudra donc changer le mot de passe manuellement pour passer d'un serveur à l'autre.
+
+4) Déconnecter le robot du PC. En appuyant sur le bouton de Nao, l'adresse IP qu'il va donner va changer et correspondre au réseau auquel il est connecté.
+
+• Démarrer le serveur avec le site (VM) (les Raspberry n'ont pas besoin de manipulation particulière)
+PRÉ-REQUIS
+  - Installer git : sudo apt-get install git
+  - Installer nodeJS :
+	sudo apt-get install curl python-software-properties
+	curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+	sudo apt-get install nodejs
+  - Vérifier l'installation :
+	node -v
+	npm -v
+  - Installation de SailsJS et de l'adapteur pour se connecter à la base de données MySQL :
+	sudo npm install sails -g
+	sudo npm install sails-mysql --save
+
+1) Récupérer le site : git clone http://github.com/projet-nao/Nao2019 --branch develop --single-branch [chemin de destination du clone]
+(Il est conseillé de ne pas cloner dans le répertoire courant)
+2) Se placer dans le dossier dans lequel le site a été cloné : cd [chemin du clone]
+3) Récupérer/Actualiser l'adaptateur mysql de Sails : npm install sails-mysql --save		(Si pas déjà fait)
+4) Créer une base de données mysql "naoDB" et créer les tables à partir des fichiers .sql dans le dossier "DB" du site cloné.
+5) Toujours dans le dossier du site cloné, lancer le serveur sur le port 80 : sudo sails lift --port 80
+Notes : 
+- si apache est présent sur la VM, arrêter le service pour libérer le port 80 pour sails : sudo service apache2 stop
+	Sinon changer simplement le port permet de garder accès à PHPMyAdmin si installé (voir /etc/apache2/ports.conf )
+- Lancer le serveur sans préciser de port le lancera sur le port 1337. Cela posera des problèmes lorsque le site communiquera avec le robot puisqu'il essaiera de s'y connecter avec le même port, ce qui ne fonctionne pas.
+
+• Accès à l'interface
+1) Saisir l'adresse IP du serveur comme URL dans un navigateur OU "naobox.local"
+2) Lors de la première connexion au robot, ses identifiants seront demandés ->  login : "nao" ; password : "3ILRodez"
+3) Essayez les commandes disponibles ! 
+
+Notes sur le site présent sur git :
+Cette version du site présente la même interface que celle de l'année précédente, mais celle-ci a été refaite, et les commandes ne sont pas fonctionnelles.
+Elle présente cependant la possibilité de recevoir le retour des caméras du robot.
+/!\ La branche la plus avancée est la branche develop
+  - Quelques autres branches existent mais sont pas intéressantes
