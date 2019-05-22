@@ -127,8 +127,8 @@
                         <h3 class="ui left aligned header">Mode parlotte</h3>
                         <div class="ui fluid action labeled input" data-children-count="1">
                             <div class="ui label label">Faire dire</div>
-                            <input type="text" placeholder="Coucou">
-                            <button class="ui button button">Executer</button>
+                            <input type="text" placeholder="Coucou" id="tts-input">
+                            <button class="ui button button" onclick="jsnao.al_tts.say($('#tts-input').val())">Executer</button>
                         </div>
                     </div>
                 </div>
