@@ -72,7 +72,7 @@ Les API se génèrent en première partie via une commande de SailsJS : `sails g
 Cette commande génère deux fichiers `./models/*Nom de la table de la BDD*.js` et `./controllers/*Nom de la table de la BDD*.js`
 
 L'aspect Model est contenu dans le dossier `api/models`.  
-Ce dossier contient des fichiers `.json` qui décrivent la structure des tables de la base de données.  
+Ce dossier contient des fichiers `.js` qui décrivent la structure des tables de la base de données.  
 Il faut installer un adapteur pour les différentes bases de données.  Pour installer l'adapteur pour MySQL il faut saisir la commande `npm install sails-mysql --save --save-exact` dans le dossier du projet.  
 En suite le paramétrage pour le fichier `/config/datastores.js` est disponible à [cette page](https://sailsjs.com/documentation/reference/configuration/sails-config-datastores#?using-a-local-mysql-database-in-development)  
 ##### /!\ Le framework SailsJS impose d'avoir un champ `createdAt` et `updatedAt` /!\   
