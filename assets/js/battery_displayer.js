@@ -1,13 +1,4 @@
-var battery_value = 0 ;
-console.log("battery_value : "+battery_value);
-setInterval(function() {
-    updateBattery(battery_value,true);
-    battery_value +=10;
-    if(battery_value == 100){battery_value = 0;}
-}, 2000);
-
-
-async function updateBattery(battery_value){
+function updateBattery(battery_value){
     var size = "-2x";
     $("#connectionStatus").removeClass();
     if(battery_value >= 80){

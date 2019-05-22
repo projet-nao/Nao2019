@@ -8,6 +8,7 @@ var jsnao = {
   session : null,
   al_sys : null,
   al_behavior : null,
+  al_battery : null,
   al_tts : null,
   al_video : null,
   al_motion : null,
@@ -23,12 +24,18 @@ var jsnao = {
   },
   connected : function() {
     console.log('Session Connected.');
+    jsnao.session.service("ALBattery").done(jsnao.init_battery);
     jsnao.session.service("ALSystem").done(jsnao.init_system);
     jsnao.session.service("ALMotion").done(jsnao.init_motion);
     jsnao.session.service("ALVideoDevice").done(jsnao.init_video);
     jsnao.session.service("ALTextToSpeech").done(jsnao.init_tts);
     jsnao.session.service("ALRobotPosture").done(jsnao.init_posture);
     jsnao.session.service("ALBehaviorManager").done(jsnao.init_behavior);
+  },
+  init_battery : function(data) {
+    jsnao.al_battery = data;
+    console.log('Battery Initialized.');
+    jsnao.initialized();
   },
   init_tts : function(data) {
     jsnao.al_tts = data;
@@ -66,19 +73,22 @@ var jsnao = {
   },
   initialized : function() {
     //vérifie si tous les services de Nao ont été initialisé
-    if (jsnao.al_sys && jsnao.al_behavior && jsnao.al_tts && jsnao.al_video && jsnao.al_motion && jsnao.al_posture) {
+    if (jsnao.al_sys && jsnao.al_behavior && jsnao.al_tts && jsnao.al_video && jsnao.al_motion && jsnao.al_posture && jsnao.al_battery) {
       newPositiveNotification("Nao est connecté !");
       jsnao.is_initialized = true;
+      setInterval("jsnao.al_battery.getBatteryCharge().done(jsnao.update_battery)",5000);
     }
   },
   display_video : function() {
-    jsnao.al_motion.setStiffnesses('Head', 1.0).fail(jsnao.error);
-    jsnao.t = [];
-    for (var i = 0; i < 1024; ++i) {
-      jsnao.t[String.fromCharCode(i)] = i;
+    if (jsnao.is_initialized) {
+      jsnao.al_motion.setStiffnesses('Head', 1.0).fail(jsnao.error);
+      jsnao.t = [];
+      for (var i = 0; i < 1024; ++i) {
+        jsnao.t[String.fromCharCode(i)] = i;
+      }
+      var z = Math.floor((Math.random()*10000)+1);
+      jsnao.al_video.subscribeCameras("test_z" + z, [0,1], [0,0], [11,11], 30).done(jsnao.subscribed_video).fail(jsnao.error);
     }
-    var z = Math.floor((Math.random()*10000)+1);
-    jsnao.al_video.subscribeCameras("test_z" + z, [0,1], [0,0], [11,11], 30).done(jsnao.subscribed_video).fail(jsnao.error);
   },
   subscribed_video : function(sname) {
     jsnao.sname = sname;
@@ -139,6 +149,9 @@ var jsnao = {
   },
   stop_behavior : function() {
       jsnao.al_behavior.stopAllBehaviors().done(jsnao.behavior_ended).fail(jsnao.error);
+  },
+  update_battery : function(data) {
+    updateBattery(data); //fonction de battery_displayer.js
   },
   disconnected : function() {
     console.log('Session Disconnected.');
