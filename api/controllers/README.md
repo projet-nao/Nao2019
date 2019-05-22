@@ -15,8 +15,12 @@ Il faut que le fichier contienne :
 Les controllers contiennent des actions qui peuvent être appelées via les routes (voir fichier `/config/routes.js`).  
 La syntaxe est :  
 `*nom de l'action*: function (req, res) {`  
+`    /* Code */`  
+`};`  
     ou  
 `*nom de l'action*: await function (req, res) {`  
+`    /* Code */`  
+`};`  
 
 Par défaut, les accès à la base de données se font de manière asynchrone.  
 Si il est nécessaire de faire plusieurs appels à la BDD, il est intéressant de forcer l'attente avec le mot clé `await`.  
