@@ -67,7 +67,7 @@
 				</li>
 				<li class="nav-item">
 					<div class="btn-group centered-navBtn">
-						<button id="stop-btn" class="btn btn-secondary"><div>Arrêt comportement</div>  <i aria-hidden="true" style="position: absolute;right: 8%;top: 25%;" class="fas fa-times"></i></button>
+						<button onclick="jsnao.stop_behavior()" id="stop-btn" class="btn btn-secondary" onclick=""><div>Arrêt comportement</div>  <i aria-hidden="true" style="position: absolute;right: 8%;top: 25%;" class="fas fa-times"></i></button>
 					</div>
 				</li>
 				<li class="nav-item">
@@ -75,7 +75,7 @@
 						<a href=<%=login_page==undefined ? login_page : "#"%> >
 							<button class="btn btn-outline-secondary my-2 my-sm-0"><i class="fas fa-tools"></i></button>
 						</a>
-						<a href="https://github.com/projet-nao/Nao2019/tree/NAO-1-Test">
+						<a href="https://github.com/projet-nao/Nao2019">
 							<button class="btn btn-outline-secondary my-2 my-sm-0 right-content"><i class="fas fa-book"></i></button>
 						</a>
 						<button class="btn btn-outline-danger my-2 my-sm-0 right-content"><i class="fas fa-power-off"></i></button>
@@ -126,7 +126,7 @@
 	<%- body %>
     <input type="text" id="ip-nao" />
     <input type="button" id="btn-connect" value="Connexion"/>
-    <input type="button" id="btn-camera" value="Activer caméras"/><br/>
+    <input type="button" id="btn-camera" onclick="jsnao.display_video()" value="Activer caméras"/><br/>
     <canvas id="cameraT"></canvas><br />
 	<canvas id="cameraB"></canvas>
 	<footer>
@@ -206,32 +206,14 @@
 	<script src="/js/battery_displayer.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/fontawesome.js"></script>
-	<script src="/js/semantic.min.js"></script>
+	<script src="/js/semantic.min.js"></script
+	<script src="/js/notifications.js"></script>
 	<script src="/js/jsnao.js"></script>
 	<!--SCRIPTS END-->
-    <script>
-        function closeNotification(numNotif){
-            var idNotif= "#notification"+numNotif;
-            var notifications = $(idNotif);
-            if(notifications.length == 1){
-                notifications.remove();
-            }else{
-                console.log("err in notifications selection");
-            }
-        }
-
-        var numNotif=1;
-        function newNotification(message){
-            var notifications = $(".notifications");
-            numNotif++;
-            var notification ="<div id=\"notification"+numNotif+"\"class=\"nao message\">\
-                <i class=\"fas fa-exclamation-circle fa-2x\" style=\"margin-right: 10px;\"></i>\
-                <div>"+message+"</div>\
-                <i class=\"fas fa-times close-notification\" style=\"left:0px\" onclick=\"closeNotification("+numNotif+")\"></i></div>";
-            notifications.prepend(notification);
-        }
-    </script>
 	<script type="text/javascript">
+    $(document).ready(function() {
+      newNegativeNotification("Nao n'est pas connecté.");
+    });
     $("#btn-connect").click(function() {
         var ipNao = $("#ip-nao").val();
 		var jsQim = "http://"+ipNao+"/libs/qimessaging/1.0/qimessaging.js";
@@ -241,16 +223,12 @@
 				dataType: "script"
 			}).done(function() {
 				jsnao.connect(ipNao);
-                newNotification("Nao connecté !");
 			}).fail(function() {
 				alert("La librairie QImessaging de NAO ne peut pas être executée!");
 			});
 		} catch(err) {
 			alert("Une erreur s'est produite: \n"+ err);
 		}
-    });
-    $("#btn-camera").click(function() {
-        jsnao.display_video();
     });
 	</script>
 	<!--JQuery MUST be before bootstrap for the navbar to work !! -->
