@@ -59,7 +59,7 @@ SailsJS permet de communiquer via une base de données qu'il faudra connecter. L
 SailsJS fait beaucoup, et propose une template très élaborée avec "type 1" (lors de la création de projet).
 Cependant, c'est un style assez basique, pour le personnaliser, il est fortement conseillé d'utiliser un Framework d'Interface Utilisateur (UI) comme [Bootstrap](https://getbootstrap.com/) ou encore [Semantic UI](https://semantic-ui.com/) ou [JQueryUI](https://jqueryui.com/) entre (de nombreux) autres... 
 
-## Fonctionnement global de SailsJS
+## Fonctionnement global du framework web SailsJS
 Ce paragraphe n'a pas vocation à expliquer précisément le fonctionnement de chaque feature du framework mais plutôt un "tour du propriétaire" pour les novices.
 
 L'aspect View (du MVC de quelques paragraphes avant) est stocké dans le dossier "views" (sans grandes surprises) et contient deux sous dossiers :  
@@ -95,7 +95,25 @@ Seule la balise d'ouverture change le type d'affichage, la fermeture est toujour
 Le controlleur peut contacter les fichiers de Model pour faire des requêtes à la base de données.
 
 Le fichier `config/routes.js` joue un rôle intéressant :  
-Il permet de déclarer les URL accessibles dans le cadre du site, soit une vue soit un controller. La syntaxe de ce fichier est encore une fois du JSON. Plus de détails sont disponibles dans la [documentation du Framework](https://sailsjs.com/documentation/concepts/routes).
+Il permet de déclarer les URL accessibles dans le cadre du site, soit une vue soit un controller. La syntaxe de ce fichier est encore une fois du JavaScript. Plus de détails sont disponibles dans la [documentation du Framework](https://sailsjs.com/documentation/concepts/routes).
+
+## Fonctionnement de la connexion client - robot :  
+Nous n'avons pas réussi à mettre en oeuvre les fichiers JavaScript du groupe de l'année précédente (2018), nous avons donc utilisé les fichiers de l'année 2015 (pas de documentation valable jusque là).
+Le fichier principal est `assets/js/jsnao.js`. __Actuellement, seul le retour vidéo du robot est disponible__, l'adresse IP du robot se saisie dans le champ disponible, puis le bouton "Connexion" lance le processus de connexion avec le robot. Une fois connecté, il est possible d'accéder aux autres services du robot (lancer un comportement, récupérer le niveau de batterie...).  
+Les services sont accessibles via la classe 
+
+Mot de l'équipe :  
+Nous avons essayé d'éliminer au plus possible le nombre de librairies utilisées. Nous utilisons [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) pour la disposition générale et [Fontawesome](https://fontawesome.com/) pour les icones.  
+Il reste malheuresement des vestiges de semantic UI du dernier projet (pour le corps des onglets principalement), quelques tags de ReactJS ...
+Nous pensons qu'il est possible de tout faire avec Bootstrap uniquement et qu'intégrer beaucoup de bibliothèques nuirait à la lisibilité du code.
+
+En cas de pépin ou de problème, n'hésitez pas à nous contacter :  
+RAMOND Olivier : [olivier.ramond.pro@gmail.com](mailto:olivier.ramond.pro@gmail.com)  
+Role : Dev pour connexion entre le site et le robot (acquisition de données + envoi de requêtes).  
+TULET Yoan : [yoan.tulet@gmail.com](mailto:yoan.tulet@gmail.com)  
+Role : Gestion/Suivi du projet (voir tâches et tableau sur github) + aspect connexion vers l'onglet admin (envoi données en AJAX)  
+DEFRANCES Maxime : [maxime.defrances@hotmail.fr](mailto:maxime.defrances@hotmail.fr)  
+Role : Dev pour IHM et ""spécialiste""(dans le groupe de travail) du framework SailsJS.  
 
 <!-- Internally, Sails used [`sails-generate@1.16.8`](https://github.com/balderdashy/sails-generate/tree/v1.16.8/lib/core-generators/new). -->
 
