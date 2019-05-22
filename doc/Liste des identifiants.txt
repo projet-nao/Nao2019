@@ -1,0 +1,12 @@
+Nao (paulo - orange) : Utilisé pour accéder au robot depuis le site ou sur la page du robot (pour modifier sa connexion wifi)
+  login : nao
+  mdp : 3ILRodez
+
+Point d'accès Raspberry (ancien)
+  nom : NAOBOX-3IL
+  mdp : 3ILRodez14
+
+Point d'accès Raspberry (récent)
+  nom : NAOBOX-3IL
+  mdp : 3iLRodezNaoboxv2
+
