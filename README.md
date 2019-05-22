@@ -35,9 +35,10 @@ Le serveur qui hébèrge le tout est un Ubuntu 16.04.6 (Des problèmes rencontr�
 ### Pour installer NodeJS + npm + SailsJS sur Ubuntu :
   [Tutoriel utilisé](https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/), à recopier ici plus tard pour éviter des liens morts
   
-  NodeJS : `sudo apt-get install curl python-software-properties  
-  curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -  
-  sudo apt-get install nodejs`
+  NodeJS : 
+  `sudo apt-get install curl python-software-properties`  
+  `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`  
+  `sudo apt-get install nodejs`
 
   SailsJS : `npm install sails -g`
 
