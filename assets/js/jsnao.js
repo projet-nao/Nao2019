@@ -1,3 +1,8 @@
+/**
+ * Documentation de QiMessaging :
+ * QiSession : http://doc.aldebaran.com/2-1/dev/js/index.html
+ * API : http://doc.aldebaran.com/2-1/naoqi/index.html
+ */
 console.log('Loading Js NAO...');
 var jsnao = {
   t : null,
@@ -76,7 +81,7 @@ var jsnao = {
     if (jsnao.al_sys && jsnao.al_behavior && jsnao.al_tts && jsnao.al_video && jsnao.al_motion && jsnao.al_posture && jsnao.al_battery) {
       newPositiveNotification("Nao est connecté !");
       jsnao.is_initialized = true;
-      setInterval("jsnao.al_battery.getBatteryCharge().done(jsnao.update_battery)",5000);
+      jsnao.al_battery.enablePowerMonitoring(true).done(setInterval("jsnao.al_battery.getBatteryCharge().done(jsnao.update_battery)",5000));
     }
   },
   display_video : function() {

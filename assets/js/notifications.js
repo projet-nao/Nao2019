@@ -17,7 +17,7 @@ function newNegativeNotification(message){
         <div>"+message+"</div>\
         <i class=\"fas fa-times close-notification\" style=\"left:0px\" onclick=\"closeNotification("+numNotif+")\"></i></div>";
     notifications.prepend(notification);
-    setTimeout("closeNotification(numNotif)",10000);
+    setTimeout("closeNotification("+numNotif+")",10000);
 }
 
 function newPositiveNotification(message){
@@ -28,7 +28,7 @@ function newPositiveNotification(message){
         <div>"+message+"</div>\
         <i class=\"fas fa-times close-notification\" style=\"left:0px\" onclick=\"closeNotification("+numNotif+")\"></i></div>";
     notifications.prepend(notification);
-    setTimeout("closeNotification(numNotif)",10000);
+    setTimeout("closeNotification("+numNotif+")",10000);
 }
 
 function newNeutralNotification(message){
@@ -39,5 +39,5 @@ function newNeutralNotification(message){
         <div>"+message+"</div>\
         <i class=\"fas fa-times close-notification\" style=\"left:0px\" onclick=\"closeNotification("+numNotif+")\"></i></div>";
     notifications.prepend(notification);
-    setTimeout("closeNotification(numNotif)",10000);
+    setTimeout("closeNotification("+numNotif+")",10000);
 }
