@@ -1,10 +1,5 @@
 <div id="app">
     <div class="nao notifications">
-        <div id="notification1" class="nao negative message">
-            <i class="fas fa-exclamation-circle fa-2x" style="margin-right: 10px;"></i>
-            <div>Le robot n'est pas connecté !</div>
-            <i class="fas fa-times close-notification" style="left:0px" onclick="closeNotification(1)"></i>
-        </div>
     </div>
     <div class="padding-top">
     <div class="ui fluid container">
@@ -15,11 +10,11 @@
         </div>
         <div class="ui bottom attached segment tabContent" id ="actContent" style = "display: flex">
             <div class="ui fluid container">
-                <button class="ui massive button" style="margin: 5px;">Tai Tchi</button>
-                <button class="ui massive button" style="margin: 5px;">Air Guitar</button>
-                <button class="ui massive button" style="margin: 5px;">Chercher la balle</button>
-                <button class="ui massive button" style="margin: 5px;">Mode pause</button>
-                <button class="ui massive button" style="margin: 5px;">Réveil</button>
+                <button class="ui massive button" style="margin: 5px;" onclick="jsnao.run_behavior('taichi/behavior_1')">Tai Tchi</button>
+                <button class="ui massive button" style="margin: 5px;" onclick="jsnao.run_behavior('airguitar/behavior_1')">Air Guitar</button>
+                <button class="ui massive button" style="margin: 5px;" onclick="jsnao.run_behavior('chercheballe/behavior_1')">Chercher la balle</button>
+                <button class="ui massive button" style="margin: 5px;" onclick="jsnao.run_behavior('modepause/behavior_1')">Mode pause</button>
+                <button class="ui massive button" style="margin: 5px;" onclick="jsnao.run_behavior('dialog_engines/bhv_wake_up')">Réveil</button>
             </div>
         </div>
         <div class="ui bottom attached segment tabContent" id ="ctrlContent" style = "display: none">
