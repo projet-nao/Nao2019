@@ -3,6 +3,8 @@ var jsnao = {
   t : null,
   sname : null,
   coords : { x: 0, y: 0},
+  behavior_running : false,
+  is_initialized : false,
   session : null,
   al_sys : null,
   al_behavior : null,
@@ -32,10 +34,12 @@ var jsnao = {
     jsnao.al_tts = data;
     jsnao.al_tts.getLanguage().done(function(data) {});
     console.log('Text To Speech Initialized.');
+    jsnao.initialized();
   },
   init_behavior : function(data) {
     jsnao.al_behavior = data;
     console.log('Behavior Initialized.');
+    jsnao.initialized();
   },
   init_system : function(data) {
     jsnao.al_sys = data;
@@ -43,18 +47,29 @@ var jsnao = {
     jsnao.al_sys.systemVersion().done(function(data) {});
     jsnao.al_sys.robotIcon().done(function(data) {});
     console.log('System Initialized.');
+    jsnao.initialized();
   },
   init_motion : function(data) {
     jsnao.al_motion = data;
     console.log('Motion Initialized.');
+    jsnao.initialized();
   },
   init_posture : function(data) {
     jsnao.al_posture = data;
     console.log('Posture Initialized.');
+    jsnao.initialized();
   },
   init_video : function(data) {
     jsnao.al_video = data;
     console.log('Video Initialized.');
+    jsnao.initialized();
+  },
+  initialized : function() {
+    //vérifie si tous les services de Nao ont été initialisé
+    if (jsnao.al_sys && jsnao.al_behavior && jsnao.al_tts && jsnao.al_video && jsnao.al_motion && jsnao.al_posture) {
+      newPositiveNotification("Nao est connecté !");
+      jsnao.is_initialized = true;
+    }
   },
   display_video : function() {
     jsnao.al_motion.setStiffnesses('Head', 1.0).fail(jsnao.error);
@@ -106,6 +121,24 @@ var jsnao = {
       imageData.data[p++] = 255;
     }
     context.putImageData(imageData, 0, 0);
+  },
+  run_behavior : function(behavior) {
+    if (!jsnao.behavior_running && jsnao.is_initialized) {
+      jsnao.behavior_running = true;
+      $("#stop-btn").addClass("btn-danger");
+      $("#stop-btn").removeClass("btn-secondary");
+      //la liste des comportements que connait le robot se trouve dans le dossier "/var/persistent/home/nao/.local/share/PackageManager/apps" (à son adresse)
+      //exemple de nom de comportement : "taichi/behavior_1"
+      jsnao.al_behavior.runBehavior(behavior).done(jsnao.behavior_ended).fail(jsnao.error);
+    }
+  },
+  behavior_ended : function() {
+    jsnao.behavior_running = false
+    $("#stop-btn").addClass("btn-secondary");
+    $("#stop-btn").removeClass("btn-danger");
+  },
+  stop_behavior : function() {
+      jsnao.al_behavior.stopAllBehaviors().done(jsnao.behavior_ended).fail(jsnao.error);
   },
   disconnected : function() {
     console.log('Session Disconnected.');
