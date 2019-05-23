@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-    login: async function (req, res) {
+    /*login: async function (req, res) {
         var result;
         var params = req.allParams();
         if(params.email==undefined){
@@ -56,6 +56,6 @@ module.exports = {
         }
 
         return res.json(result);
-    }
+    }*/
 };
 

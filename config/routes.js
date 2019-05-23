@@ -29,14 +29,14 @@ module.exports.routes = {
       login_page:"#"
     }
   },
-  '/loginCTRL':{
+  /*'/loginCTRL':{
     controller: 'UsersController',
     action: 'login'
   },
   '/userADD':{
     controller: 'UsersController',
     action: 'createUser'
-  }
+  }*/
 
 
   /***************************************************************************
